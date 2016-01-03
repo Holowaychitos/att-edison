@@ -4,13 +4,13 @@ const five = require('johnny-five')
 const Edison = require('galileo-io')
 const _ = require('lodash')
 
-const BEACONS = [12345, 22345, 61306, 28944, 21001]
+const BEACONS =  [12345, 22345, 21001, 28944, 61306]
 const BUS_ROUTES = {
   12345: '5504',
   22345: '5506',
-  61306: '5507',
+  21001: '5507',
   28944: '5508',
-  21001: '1217'
+  61306: '1217'
 }
 
 var temp;
