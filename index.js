@@ -18,6 +18,11 @@ var boardReady = () => {
   Bleacon.on('discover', function discover (bleacons) {
     let res = _.filter([bleacons], {major: 21737})
     res = _.filter(res, {proximity: 'immediate'})
+
+    if (res.length > 0 ) {
+      console.log('minor', res[0].minor)
+    }
+
     //led.off()
     // const data = {
     //   busStopId: req.body.busStopId,
@@ -25,8 +30,6 @@ var boardReady = () => {
     // }
 
     // transport.setLevel(data)
-
-    console.log(res)
   })
 }
 
