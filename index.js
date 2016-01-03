@@ -21,7 +21,7 @@ var boardReady = () => {
     res = _.filter(res, {proximity: 'immediate'})
 
     if (res.length > 0) {
-      let active = _.findIndex(BEACONS, res[0].minor)
+      let active = _.indexOf(BEACONS, res[0].minor)
       console.log(active)
     }
 
