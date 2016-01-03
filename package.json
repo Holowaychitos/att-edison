@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.8.1",
     "bleacon": "^0.4.0",
     "galileo-io": "^0.9.1",
     "johnny-five": "^0.9.17",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "mraa": "^0.9.0"
   }
 }

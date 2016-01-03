@@ -4,7 +4,7 @@ const five = require('johnny-five')
 const Edison = require('galileo-io')
 const _ = require('lodash')
 
-const transport = require('./transport')
+const transport = require('./lib/transport')
 
 const board = new five.Board({
   io: new Edison(),
@@ -14,6 +14,7 @@ const board = new five.Board({
 var boardReady = () => {
   var led = new five.Led(8)
   Bleacon.startScanning()
+  console.log('Board Start')
   Bleacon.on('discover', function discover (bleacons) {
     let res = _.filter([bleacons], {major: 21737})
     res = _.filter(res, {proximity: 'immediate'})
