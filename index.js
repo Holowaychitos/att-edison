@@ -13,6 +13,8 @@ const BUS_ROUTES = {
   21001: '1217'
 }
 
+var temp;
+
 const transport = require('./lib/transport')
 
 const board = new five.Board({
@@ -30,7 +32,8 @@ var boardReady = () => {
 
     if (res.length > 0) {
       let active = _.indexOf(BEACONS, res[0].minor)
-      if (active !== -1) {
+      if (active !== -1 && temp !== active) {
+        temp = active
         console.log(active)
         const data = {
           currentBusStopId: BUS_ROUTES[res[0].minor]
