@@ -4,6 +4,8 @@ const five = require('johnny-five')
 const Edison = require('galileo-io')
 const _ = require('lodash')
 
+const transport = require('./transport')
+
 const board = new five.Board({
   io: new Edison(),
   repl: false
@@ -15,7 +17,15 @@ var boardReady = () => {
   Bleacon.on('discover', function discover (bleacons) {
     let res = _.filter([bleacons], {major: 21737})
     res = _.filter(res, {proximity: 'immediate'})
-    led.off()
+    //led.off()
+    // const data = {
+    //   busStopId: req.body.busStopId,
+    //   busStopLoad: req.body.busStopLoad
+    // }
+
+    // transport.setLevel(data)
+
+    console.log(res)
   })
 }
 
